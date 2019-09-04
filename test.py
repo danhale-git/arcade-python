@@ -1,34 +1,35 @@
 import arcade
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+# Constants
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 650
+SCREEN_TITLE = "test"
 
 
 class MyGame(arcade.Window):
-    """ Main application class. """
 
-    def __init__(self, width, height):
-        super().__init__(width, height)
+    def __init__(self):
 
-        arcade.set_background_color(arcade.color.AMAZON)
+        # Call the parent class and set up the window
+        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+
+        arcade.set_background_color(arcade.csscolor.CORNFLOWER_BLUE)
 
     def setup(self):
-        # Set up your game here
+        """ Set up the game here. Call this function to restart the game. """
         pass
 
     def on_draw(self):
         """ Render the screen. """
-        arcade.start_render()
-        # Your drawing code goes here
 
-    def update(self, delta_time):
-        """ All the logic to move, and the game logic goes here. """
-        pass
+        arcade.start_render()
+        # Code to draw the screen goes here
 
 
 def main():
-    game = MyGame(SCREEN_WIDTH, SCREEN_HEIGHT)
-    game.setup()
+    """ Main method """
+    window = MyGame()
+    window.setup()
     arcade.run()
 
 
