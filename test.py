@@ -1,5 +1,6 @@
 import arcade
 import math
+import draw
 
 # Constants
 SCREEN_WIDTH = 1000
@@ -39,22 +40,7 @@ class MyGame(arcade.Window):
 
     def on_draw(self):
         arcade.start_render()
-        self.DrawPlayer()        
-
-    def DrawPlayer(self):
-        
-        backRight = (25, -50)
-        backLeft = (-25, -50)
-        front = (0, 0)
-
-        x = self.player.xPos
-        y = self.player.yPos
-
-        arcade.draw_triangle_filled(x+front[0],     y+front[1],
-                                    x+backLeft[0],  y+backLeft[1],
-                                    x+backRight[0], y+backRight[1],
-
-                                    arcade.color.ALLOY_ORANGE)
+        draw.Player(self.player)        
 
     def KeyEvent(self, key, state):
         if   key == arcade.key.W: self.W_down = state
