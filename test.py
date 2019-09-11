@@ -49,7 +49,7 @@ class MyGame(arcade.Window):
         elif key == arcade.key.D: self.D_down = state
         
 class PlayerEntity:
-    
+    __slots__ = ['xPos', 'yPos', 'speed']    
     def __init__(self):
         self.xPos
         self.yPos
